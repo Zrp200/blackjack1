@@ -1,4 +1,4 @@
-require "hand"; require "card"
+require "hand"
 Hand.deck = CardDeck::Deck.new
 RSpec.describe Hand do
   describe ".deck" do
