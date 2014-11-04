@@ -1,3 +1,4 @@
+require_relative "card.rb"
 class Hand # The player
 	attr_accessor :cards
 	def self.deck=(deck) # Set which deck the game is using
