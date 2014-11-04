@@ -3,7 +3,7 @@ Gem::Specification.new do |gem|
 	gem.version = "0.0.0"
 	gem.email = "zrp200@gmail.com"
 	gem.author = "Zachary Perlmutter"
-	gem.files = %w(lib/blackjack.rb)
+	gem.files = %w(lib/card.rb lib/deck.rb)
 	gem.license = "MIT"
 	gem.extra_rdoc_files = %w(README.md LICENSE)
 	gem.summary = "The classic game of blackjack"
