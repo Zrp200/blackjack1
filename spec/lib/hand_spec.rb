@@ -16,9 +16,9 @@ RSpec.describe Hand do
     h = Hand.new
     subject {h}
     describe "value" do
-      context "when @cards == [#{card 'Ace', spades}, #{card 10, spades}, #{card 10, diamonds}]" do
+      context "when @cards == [#{card 'Ace', 'spades'}, #{card 10, 'spades'}, #{card 10, 'diamonds'}]" do
         hand = Hand.new
-        hand.cards = [card('Ace', spades), card(10, spades), card(10, diamonds)]
+        hand.cards = [card('Ace', 'spades'), card(10, 'spades'), card(10, 'diamonds')]
         subject {hand.value}
         it {is_expected.to eq 21}
       end
