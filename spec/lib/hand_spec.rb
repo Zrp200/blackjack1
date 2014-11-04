@@ -1,10 +1,10 @@
+Bundler.require :rspec
 require "hand"
-require "rspec-its"
 Hand.deck = CardDeck::Deck.new
 RSpec.describe Hand do
   describe ".deck" do
     subject {Hand.deck}
-    it {is_expected.to be_an_instance_of CardDeck::Deck}
+    it {is_expected.to be_an_instance_of Array}
   end
   describe "#new" do
     describe "hit" do
