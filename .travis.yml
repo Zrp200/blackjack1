@@ -3,5 +3,6 @@ rvm: 2.0.0
 install: 
 - gem update
 - bundle
+script: bundle exec rspec --color -f doc
 matrix:
   fast_finish: true
