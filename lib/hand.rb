@@ -7,7 +7,7 @@ class Hand # The player
 	def self.deck # The deck the game is using
 		@@deck
 	end
-	def initialize; @cards = [@@deck.cards.shift, @@deck.cards.shift]; end
+	def initialize; @cards = [@@deck.shift, @@deck.shift]; end
 	def hit; @cards.push @@deck.shift; end
 	def value # The value of the cards in @cards
 		v, aces = 0, 0
