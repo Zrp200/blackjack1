@@ -1,4 +1,4 @@
-require "blackjack"
+require "hand"; require "card"
 Hand.deck = CardDeck::Deck.new
 def card(num, suit)
   suit = case suit.downcase
