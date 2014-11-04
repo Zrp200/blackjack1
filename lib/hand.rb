@@ -2,7 +2,7 @@ require_relative "card.rb"
 class Hand # The player
 	attr_accessor :cards
 	def self.deck=(deck) # Set which deck the game is using. Also shuffles the deck.
-		@@deck = deck.shuffle
+		@@deck = deck.cards.shuffle
 	end
 	def self.deck # The deck the game is using
 		@@deck
