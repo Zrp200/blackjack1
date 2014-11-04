@@ -9,7 +9,7 @@ Gem::Specification.new do |gem|
 	gem.summary = "The classic game of blackjack"
 	gem.executables << "blackjack"
 	gem.required_ruby_version = "1.9.2"
-	gem.add_runtime_dependency "card_deck", "~> 1.1"
+	gem.add_runtime_dependency "card_deck", "~> 1.2"
 	gem.requirements << "Command Prompt"
 	gem.bindir = "bin"
 end
