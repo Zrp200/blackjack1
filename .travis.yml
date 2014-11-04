@@ -2,7 +2,7 @@ language: ruby
 rvm: 2.0.0
 notifications:
   email:
-    - 8185408099@vtext.com
+    - 8185408099@verizon.org
 install: 
 - gem update --system
 - bundle
