@@ -1,4 +1,5 @@
 require "hand"
+require "rspec-its"
 Hand.deck = CardDeck::Deck.new
 RSpec.describe Hand do
   describe ".deck" do
@@ -8,7 +9,7 @@ RSpec.describe Hand do
   describe "#new" do
     describe "hit" do
       s = Hand.new
-      subject {s}
+      subject {s.cards}
       s.hit
       its(:length) {is_expected.to eq 3}
     end
