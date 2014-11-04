@@ -6,8 +6,12 @@ RSpec.describe Hand do
     it {is_expected.to be_an_instance_of CardDeck::Deck}
   end
   describe "#new" do
-    h = Hand.new
-    subject {h}
+    describe "hit" do
+      s = Hand.new
+      subject {s}
+      s.hit
+      its(:length) {is_expected.to eq 3}
+    end
     describe "value" do
       context "when @cards == [#{CardDeck.Card 'Ace', 'spades'}, #{CardDeck.Card 10, 'spades'}, #{CardDeck.Card 10, 'diamonds'}]" do
         hand = Hand.new
