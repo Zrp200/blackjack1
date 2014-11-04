@@ -1,4 +1,4 @@
-require "blackjack"
+require "card"
 include CardDeck
 RSpec.describe Card do
   describe "value" do
