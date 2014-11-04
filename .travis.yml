@@ -1,9 +1,5 @@
 language: ruby
 rvm: 2.0.0
-notifications:
-  email:
-    - 8185408099@vtext.com
-    on_failure: change
 install: 
 - gem update --system
 - bundle
