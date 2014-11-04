@@ -9,16 +9,14 @@ class Hand # The player
 	end
 	def initialize; @cards = [@@deck.cards.shift, @@deck.cards.shift]; end
 	def value # The value of the cards in @cards
-		v = 0
+		v, aces = 0, 0
 		for card in @cards
-			unless card.num == "Ace"
-				v += card.value
-			else
-				if v + 11 > 21 then v += card.value[0]
-				else
-					v += card.value[1]
-				end
-			end
+			v += card.value
+			aces += 1 if card.num == "Ace"
+		end
+		while v > 21 && aces > 0
+			v -= 10
+			aces -= 1
 		end
 		return v
 	end
