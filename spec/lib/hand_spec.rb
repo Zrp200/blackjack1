@@ -1,12 +1,5 @@
 require "hand"; require "card"
 Hand.deck = CardDeck::Deck.new
-def card(num, suit)
-  suit = case suit.downcase
-    when "diamonds" then CardDeck::Card::DIAMONDS
-    when "spades" then CardDeck::Card::SPADES
-  end
-  return CardDeck::Card.new num, suit
-end
 RSpec.describe Hand do
   describe ".deck" do
     subject {Hand.deck}
@@ -16,9 +9,9 @@ RSpec.describe Hand do
     h = Hand.new
     subject {h}
     describe "value" do
-      context "when @cards == [#{card 'Ace', 'spades'}, #{card 10, 'spades'}, #{card 10, 'diamonds'}]" do
+      context "when @cards == [#{CardDeck.Card 'Ace', 'spades'}, #{CardDeck.Card 10, 'spades'}, #{CardDeck.Card 10, 'diamonds'}]" do
         hand = Hand.new
-        hand.cards = [card('Ace', 'spades'), card(10, 'spades'), card(10, 'diamonds')]
+        hand.cards = [CardDeck.Card('Ace', 'spades'), CardDeck.Card(10, 'spades'), CardDeck.Card(10, 'diamonds')]
         subject {hand.value}
         it {is_expected.to eq 21}
       end
