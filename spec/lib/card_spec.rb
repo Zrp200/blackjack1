@@ -12,9 +12,8 @@ RSpec.describe Card do
       it {is_expected.to eq 10}
     end
     context "when num == \"Ace\"" do
-      subject {Card.new("Ace").value}
-      it {is_expected.to include 1}
-      it {is_expected.to include 11}
+      subject {Card("Ace").value}
+      it {is_expected.to eq 11}
     end
   end
 end
