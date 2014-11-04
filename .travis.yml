@@ -1,7 +1,7 @@
 language: ruby
 rvm: 2.0.0
 install: 
-- gem update
+- gem update --system
 - bundle
 script: bundle exec rspec spec --color -f doc
 matrix:
