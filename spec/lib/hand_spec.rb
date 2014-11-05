@@ -1,5 +1,4 @@
-Bundler.require :rspec
-require "hand"
+require "spec_helper"
 Hand.deck = CardDeck::Deck.new
 RSpec.describe Hand do
   describe ".deck" do
