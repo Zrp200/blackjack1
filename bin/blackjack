@@ -1,1 +1,7 @@
 #!/usr/bin/env ruby
+require "blackjack1"
+Hand.deck = CardDeck::Deck.new
+dealer, player = Hand.new, Hand.new
+puts "You have: #{player.view}"
+puts "Value: #{player.value}"
+unless 
