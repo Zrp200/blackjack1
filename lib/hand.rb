@@ -1,6 +1,7 @@
 require_relative "card.rb" rescue require "card_deck"
 class Hand # The player
 	attr_accessor :cards
+	MDHV = 16
 	def self.deck=(deck) # Set which deck the game is using. Also shuffles the deck.
 		@@deck = deck.cards.shuffle
 	end
