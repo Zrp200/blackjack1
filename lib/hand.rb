@@ -8,6 +8,7 @@ class Hand # The player
 	def self.deck # The deck the game is using
 		@@deck
 	end
+	def bust?; value > 21; end
 	def blackjack?; value == 21 && @cards.length == 2; end
 	def initialize; @cards = [@@deck.shift, @@deck.shift]; end
 	def view # The view of the cards
