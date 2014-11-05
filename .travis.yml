@@ -1,8 +1,16 @@
 language: ruby
 rvm: 2.0.0
-install: 
+install:
 - gem update --system
 - bundle
 script: bundle exec rspec spec --color -f doc
 matrix:
   fast_finish: true
+deploy:
+  provider: rubygems
+  api_key:
+    secure: TEz46pmpyjdTQWx6EWXlg5jYyg6OUa/TbHtfqGmgsgzDqzrg7yv9OBRhX7MBoIdlCU32yJ3RFJvLGYTlVUc7Cm1KuHQ+TcPyfuJqCHWqmElxIGf7oZmtXWU9LGOWsBexkEzhCmr82R3gbcy7KjIupzfwQkqJwAn/nea3aHjPYPM=
+  gem: blackjack
+  on:
+    tags: true
+    repo: Zrp200/blackjack
