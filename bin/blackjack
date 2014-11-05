@@ -1,7 +1,28 @@
 #!/usr/bin/env ruby
 require "blackjack1"
 Hand.deck = CardDeck::Deck.new
-dealer, player = Hand.new, Hand.new
-puts "You have: #{player.view}"
-puts "Value: #{player.value}"
-unless 
+dealer, player, view = Hand.new, Hand.new, proc do |player|
+	puts "You have: #{player.view}"
+	sleep 0.5
+	puts "Value: #{player.value}"
+	sleep 1
+end
+view.call player
+unless dealer.blackjack? || player.blackjack?
+	puts "The dealer is showing #{dealer.cards[1]}\n"
+	sleep 2
+	print "Hit or stay? "
+	action = gets.chomp.downcase
+	while action == "hit" && player.value <= 21
+		player.hit
+	end
+		
+else
+	if player.blackjack? then puts "You have blackjack"
+	else 
+		puts "Dealer got blackjack"
+		sleep 0.5
+		puts "Dealer wins"
+	end
+end
+end
