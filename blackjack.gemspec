@@ -10,6 +10,8 @@ Gem::Specification.new do |gem|
 	gem.executables << "blackjack1"
 	gem.required_ruby_version = "1.9.2"
 	gem.add_runtime_dependency "card_deck", "~> 1.2"
+	gem.add_development_dependency "rspec", "~> 3.1"
+	gem.add_development_dependency "rspec-its"
 	gem.requirements << "Command Prompt"
 	gem.bindir = "bin"
 end
