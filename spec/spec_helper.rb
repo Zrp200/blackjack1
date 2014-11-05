@@ -13,7 +13,7 @@
 # The `.rspec` file also contains a few flags that are not defaults but that
 # users commonly want.
 #
-require "rspec-its"
+Bundler.require :development
 require "card"
 require "hand"
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
@@ -76,17 +76,15 @@ RSpec.configure do |config|
   # end of the spec run, to help surface which specs are running
   # particularly slow.
   config.profile_examples = 10
-
+=end
   # Run specs in random order to surface order dependencies. If you find an
   # order dependency and want to debug it, you can fix the order by providing
   # the seed, which is printed after each run.
   #     --seed 1234
   config.order = :random
-
   # Seed global randomization in this process using the `--seed` CLI option.
   # Setting this allows you to use `--seed` to deterministically reproduce
   # test failures related to randomization by passing the same `--seed` value
   # as the one that triggered the failure.
   Kernel.srand config.seed
-=end
 end
