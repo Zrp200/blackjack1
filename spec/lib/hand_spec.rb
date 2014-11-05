@@ -1,6 +1,10 @@
 require "spec_helper"
 Hand.deck = CardDeck::Deck.new
 RSpec.describe Hand do
+  describe "::MDHV" do
+    subject {Hand::MDHV}
+    it {is_expected.to eq 16}
+  end
   describe ".deck" do
     subject {Hand.deck}
     it {is_expected.to be_an_instance_of Array}
