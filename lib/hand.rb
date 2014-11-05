@@ -9,7 +9,11 @@ class Hand # The player
 		@@deck
 	end
 	def initialize; @cards = [@@deck.shift, @@deck.shift]; end
-	def hit; @cards.push @@deck.shift; end
+	def view # The view of the cards
+		puts @cards.each {|card| print "#{card.abbr}\t"}
+	end
+	# Add a card to @cards from @@deck
+		def hit; @cards.push @@deck.shift; end
 	def value # The value of the cards in @cards
 		v, aces = 0, 0
 		for card in @cards
