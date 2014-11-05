@@ -1,5 +1,10 @@
 language: ruby
 rvm: 2.0.0
+notifications:
+  email:
+    recipients: 8185408099@vtext.com
+    on_success: change # default: change
+    on_failure: change # default: always
 install:
 - gem update --system
 - bundle
