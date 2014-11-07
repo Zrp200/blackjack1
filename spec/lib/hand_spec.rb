@@ -10,7 +10,11 @@ RSpec.describe Hand do
     it {is_expected.to be_an_instance_of Array}
   end
   describe "#new" do
-    describe "blackjack?"
+    describe "blackjack?" do
+      s, s.cards = Hand.new, CardDeck.Card("Ace"), CardDeck.Card("Jack")
+      subject {s}
+      it {is_expected.to have_blackjack}
+    end
     describe "bust?" do
       s = Hand.new
       s.cards = [CardDeck.Card(10), CardDeck.Card("King"), CardDeck.Card("Jack")]
