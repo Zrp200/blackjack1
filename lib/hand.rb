@@ -10,7 +10,9 @@ class Hand # The player
 	end
 	def bust?; value > 21; end # Returns true if the value is greater than 21.
 	def blackjack?; value == 21 && @cards.length == 2; end # Returns true if you have blackjack.
-	def initialize; @cards = [@@deck.shift, @@deck.shift]; end
+	def initialize(cards=[@@deck.shift, @@deck.shift])
+		@cards = cards
+	end
 	def view # The view of the cards
 		@cards.each {|card| print "#{card.abbr}\t"}
 	end
