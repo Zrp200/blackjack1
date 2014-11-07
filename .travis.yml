@@ -5,8 +5,6 @@ notifications:
     recipients: 8185408099@vtext.com
     on_success: change # default: change
     on_failure: change # default: always
-before_install:
-- chmod a+x bin/blackjack1
 install:
 - gem update --system
 - bundle
