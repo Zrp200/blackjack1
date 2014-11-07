@@ -1,4 +1,4 @@
-require "spec_helper"
+require "spec/hand_helper"
 Hand.deck = CardDeck::Deck.new
 RSpec.describe Hand do
   describe "::MDHV" do
@@ -11,7 +11,8 @@ RSpec.describe Hand do
   end
   describe "#new" do
     describe "blackjack?"
-    describe "bust?"
+    describe "bust?" do
+      
     describe "hit" do
       s = Hand.new
       subject {s.cards}
