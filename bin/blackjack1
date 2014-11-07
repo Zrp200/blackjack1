@@ -34,6 +34,7 @@ unless player.blackjack?
 		sleep 2
 		exit
 	end
+	while dealer.value =< Hand::MDHV; end
 else
 	puts "You got blackjack!"
 	sleep 1
