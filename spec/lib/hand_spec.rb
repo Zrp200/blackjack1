@@ -1,4 +1,4 @@
-require "spec/hand_helper.rb"
+require "hand_helper"
 Hand.deck = CardDeck::Deck.new
 RSpec.describe Hand do
   describe "::MDHV" do
