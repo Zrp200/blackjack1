@@ -22,7 +22,10 @@ unless player.blackjack?
 		sleep(0.5)
 	end
 	unless player.bust?
-		puts "You s
+		puts "You finished with #{player.value}"
+	else
+		puts "You busted!"
+	end
 else
 	puts "You got blackjack!"
 	sleep 1
