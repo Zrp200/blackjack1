@@ -12,7 +12,11 @@ RSpec.describe Hand do
   describe "#new" do
     describe "blackjack?"
     describe "bust?" do
-      
+      s = Hand.new
+      s.cards = [CardDeck.Card(10), CardDeck.Card("King"), CardDeck.Card("Jack")]
+      subject {s}
+      it {is_expected.to bust}
+    end
     describe "hit" do
       s = Hand.new
       subject {s.cards}
