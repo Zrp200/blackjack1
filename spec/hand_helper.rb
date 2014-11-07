@@ -4,3 +4,6 @@ RSpec::Matchers.define :bust do
     actual.bust?
   end
 end
+RSpec::Matchers.define :have_blackjack do
+  match {|actual| actual.blackjack?}
+end
