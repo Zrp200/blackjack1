@@ -1,5 +1,8 @@
 require "hand_helper"
-Hand.deck = CardDeck::Deck.new
+Hand.deck, custom_hand = CardDeck::Deck.new, proc do |cards|
+  h, h.cards = Hand.new, cards
+  return h
+end
 RSpec.describe Hand do
   describe "::MDHV" do
     subject {Hand::MDHV}
@@ -10,6 +13,11 @@ RSpec.describe Hand do
     it {is_expected.to be_an_instance_of Array}
   end
   describe "#new" do
+    context "when @cards == [#{CardDeck.Card 'Jack', 'diamonds'}, #{CardDeck.Card 'Ace', 'spades'}]" do
+      subject {custom_hand.call [CardDeck.Card("Jack", 'diamonds'), CardDeck.Card("Ace", 'spades')]}
+      it {is_expected.to have_blackjack}
+      it {is_expected.to_not bust}
+    end
     describe "hit" do
       s = Hand.new
       subject {s.cards}
