@@ -26,8 +26,17 @@ unless player.blackjack?
 	else
 		puts "You busted!"
 	end
+	sleep 0.5
+	if dealer.blackjack?
+		puts "Dealer got blackjack"
+		sleep 0.5
+		puts "Dealer wins"
+		sleep 2
+		exit
+	end
 else
 	puts "You got blackjack!"
 	sleep 1
 	puts "You win!"
+	sleep 0.5
 end
