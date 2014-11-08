@@ -10,31 +10,40 @@ end
 view.call player
 unless player.blackjack?
 	puts "The dealer is showing #{dealer.cards[1]}\n"
-	sleep 2
+	sleep 1
 	print "Hit or stay? "
 	action = gets.chomp.downcase
 	while action == "hit" && player.value <= 21
-		sleep(0.5)
+		sleep(1)
 		player.hit
 		view.call player
 		print "Hit or stay? "
 		action = gets.chomp.downcase
-		sleep(0.5)
+		sleep(1.5)
 	end
 	unless player.bust?
-		puts "You finished with #{player.value}"
+		puts "You finished with #{player.value}."
 	else
-		puts "You busted!"
+		puts "You busted."
 	end
-	sleep 0.5
+	sleep 2
 	if dealer.blackjack?
-		puts "Dealer got blackjack"
+		puts "Dealer got blackjack."
 		sleep 0.5
-		puts "Dealer wins"
+		puts "Dealer wins."
 		sleep 2
 		exit
 	end
-	while dealer.value =< Hand::MDHV; end
+	while dealer.value =< Hand::MDHV
+		puts "The dealer hit!"
+		sleep 0.5
+	end
+	if dealer.bust? then puts "The dealer busted!"
+	else
+		puts "The dealer stays at #{dealer.value}"
+	end
+	sleep 2
+	puts compare_score player, dealer
 else
 	puts "You got blackjack!"
 	sleep 1
