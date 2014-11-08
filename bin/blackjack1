@@ -2,7 +2,7 @@
 require "blackjack1"
 Hand.deck = CardDeck::Deck.new
 dealer, player, view = Hand.new, Hand.new, proc do |player|
-	puts "You have: #{player.view}"
+	puts player.view
 	sleep 0.5
 	puts "Value: #{player.value}"
 	sleep 1
@@ -13,7 +13,7 @@ unless player.blackjack?
 	sleep 1
 	print "Hit or stay? "
 	action = gets.chomp.downcase
-	while action == "hit" && player.value <= 21
+	while action == "hit" and !player.bust?
 		sleep(1)
 		player.hit
 		view.call player
@@ -34,8 +34,9 @@ unless player.blackjack?
 		sleep 2
 		exit
 	end
-	while dealer.value =< Hand::MDHV
+	while dealer.value <= Hand::MDHV
 		puts "The dealer hit!"
+		dealer.hit
 		sleep 0.5
 	end
 	if dealer.bust? then puts "The dealer busted!"

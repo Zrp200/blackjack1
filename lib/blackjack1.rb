@@ -1,4 +1,4 @@
-require_relative "hand.rb'
+require_relative "hand.rb"
 def compare_score(p1, p2, args=Hash.new(false)) # Determines who wins. parameter p1 is the player and parameter p2 is the dealer.
   unless args[:compare]
     win, lose, tie = "You win!", "Dealer wins.", "Tie"
