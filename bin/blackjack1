@@ -5,28 +5,22 @@ dealer, player, view = Hand.new, Hand.new, proc do |player|
 	puts "You have: #{player.view}"
 	sleep(0.5)
 	puts "Value: #{player.value}"
-	sleep(1)
+	sleep 1
 end
 view.call player
 unless player.blackjack?
 	puts "The dealer is showing #{dealer.cards[1].abbr}\n"
 	sleep 1
-	print "Hit or stay? "
-	action = gets.chomp.downcase
-	f = true if action == "hit"
-	while action == "hit" and !player.bust?
-		unless f
-			puts
-			print "Hit or stay? "
-			action == gets.chomp.downcase
-			break unless action == "hit"
-		else
-			f = false
-		end 
+	loop do
+		puts
+		print "Hit or stay? "
+		action == gets.chomp.downcase
+		break if action.include? "s" 
 		sleep(1)
 		player.hit
-		print view.call(player)
+		print view.call player
 		sleep(1.5)
+		break if player.value == 21
 	end
 	puts ""
 	unless player.bust?
