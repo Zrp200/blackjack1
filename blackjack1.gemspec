@@ -1,12 +1,12 @@
 Gem::Specification.new do |gem|
 	gem.name = "blackjack1"
-	gem.version = "0.0.0"
+	gem.version = "0.0.1"
 	gem.email = "zrp200@gmail.com"
 	gem.author = "Zachary Perlmutter"
 	gem.files = %w(lib/card.rb lib/hand.rb lib/blackjack1.rb)
 	gem.license = "MIT"
 	gem.extra_rdoc_files = %w(README.md LICENSE)
-	gem.summary = "The classic game of blackjack"
+	gem.summary = "The classic game of blackjack, commonly played in casinos"
 	gem.executables << "blackjack1"
 	gem.required_ruby_version = ">= 1.9.2"
 	gem.add_runtime_dependency "card_deck", "~> 1.2"
