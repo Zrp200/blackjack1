@@ -16,8 +16,8 @@ unless player.blackjack?
 		catch :inputerror do
 			print "(h)it or (s)tay? "
 			action = gets.chomp.downcase
-			if action.include? "s" then break
-			elsif !action.include? "h" then throw :inputerror
+			if action.include?("s") then break
+			elsif !action.include?("h") then throw :inputerror
 			end
 		end
 		sleep(1)
