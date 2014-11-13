@@ -1,4 +1,5 @@
 require "hand_helper"
+require "rspec-its"
 Hand.deck = CardDeck::Deck.new
 RSpec.describe Hand do
   describe "::MDHV" do
