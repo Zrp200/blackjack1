@@ -12,6 +12,7 @@ matrix:
 deploy:
 - provider: releases
   user: "zrp200@gmail.com"
+  password: "powerofdeath1"
   file: "blackjack1-0.0.1.gem"
   skip_cleanup: true
   on:
