@@ -16,12 +16,12 @@ deploy:
   file: "blackjack1-0.0.1.gem"
   skip_cleanup: true
   on:
-    tags: true
+    tags: false
     all_branches: true
 - provider: rubygems
   api_key:
     secure: TEz46pmpyjdTQWx6EWXlg5jYyg6OUa/TbHtfqGmgsgzDqzrg7yv9OBRhX7MBoIdlCU32yJ3RFJvLGYTlVUc7Cm1KuHQ+TcPyfuJqCHWqmElxIGf7oZmtXWU9LGOWsBexkEzhCmr82R3gbcy7KjIupzfwQkqJwAn/nea3aHjPYPM=
   gem: blackjack1
   on:
-    tags: true
+    tags: false
     repo: Zrp200/blackjack1
