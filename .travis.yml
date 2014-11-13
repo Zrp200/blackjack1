@@ -5,9 +5,7 @@ notifications:
     recipients: 8185408099@vtext.com
     on_success: change # default: change
     on_failure: change # default: always
-install:
-- gem update --system
-- bundle
+install: bundle
 script: bundle exec rspec spec --color -f doc
 matrix:
   fast_finish: true
