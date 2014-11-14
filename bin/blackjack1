@@ -5,8 +5,7 @@ dealer, player, view = Hand.new, Hand.new, proc do |player|
 	puts "You have: #{player.view}"
 	sleep(0.5)
 	puts "Value: #{player.value}"
-	sleep 1
-	return nil
+	sleep(1)
 end
 view.call player
 unless player.blackjack?
@@ -14,7 +13,7 @@ unless player.blackjack?
 	sleep 1
 	loop do
 		puts
-		print view.call player
+		view.call player
 		print "(h)it or (s)tay? "
 		action = gets.chomp.downcase
 		player.hit if action.include?("h")
