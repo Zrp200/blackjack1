@@ -9,15 +9,8 @@ install: bundle
 script: bundle exec rspec spec --color -f doc
 matrix:
   fast_finish: true
-before_deploy: gem build 
+before_deploy: gem build blackjack1.gemspec
 deploy:
-- provider: rubygems
-  api_key:
-    secure: TEz46pmpyjdTQWx6EWXlg5jYyg6OUa/TbHtfqGmgsgzDqzrg7yv9OBRhX7MBoIdlCU32yJ3RFJvLGYTlVUc7Cm1KuHQ+TcPyfuJqCHWqmElxIGf7oZmtXWU9LGOWsBexkEzhCmr82R3gbcy7KjIupzfwQkqJwAn/nea3aHjPYPM=
-  gem: blackjack1
-  on:
-    tags: true
-    repo: Zrp200/blackjack1
 - provider: releases
   api_key: fc4c074762fdef8ffd771868493e77cf077186f4
   file: "blackjack1-#{$TRAVIS_TAG}.gem"
@@ -25,3 +18,10 @@ deploy:
   on:
     tags: true
     all_branches: true
+- provider: rubygems
+  api_key:
+    secure: TEz46pmpyjdTQWx6EWXlg5jYyg6OUa/TbHtfqGmgsgzDqzrg7yv9OBRhX7MBoIdlCU32yJ3RFJvLGYTlVUc7Cm1KuHQ+TcPyfuJqCHWqmElxIGf7oZmtXWU9LGOWsBexkEzhCmr82R3gbcy7KjIupzfwQkqJwAn/nea3aHjPYPM=
+  gem: blackjack1
+  on:
+    tags: true
+    repo: Zrp200/blackjack1
