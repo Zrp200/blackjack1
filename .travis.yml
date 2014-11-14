@@ -12,7 +12,7 @@ matrix:
 deploy:
 - provider: releases
   api_key: fc4c074762fdef8ffd771868493e77cf077186f4
-  file: "blackjack1-#{$TRAVIS_TAG}.gem"
+  file: "blackjack1-0.0.2.gem"
   skip_cleanup: true
   on:
     tags: true
