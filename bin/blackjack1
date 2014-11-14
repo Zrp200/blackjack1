@@ -9,7 +9,7 @@ BEGIN {
 	\u00B7Number => itself
 	\u00B7King, Queen, Jack => 10 
 HELP
-	if ARGV[0].class = String
+	if ARGV[0].class == String
 		puts helpmessage if ARGV[0].include? "-h"
 	end
 }
