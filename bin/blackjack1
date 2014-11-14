@@ -53,3 +53,9 @@ else
 	puts "You win!"
 	sleep 0.5
 end
+END {
+	sleep(2)
+	puts; puts
+	print "Would you like to play again? (y/n) "
+	`blackjack1` if gets.chomp.downcase.include? "y"
+}
