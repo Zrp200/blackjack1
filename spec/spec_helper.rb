@@ -14,6 +14,7 @@
 # users commonly want.
 #
 Bundler.require :development
+require_relative "codeclimate.rb"
 require "card"
 require "hand"
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
