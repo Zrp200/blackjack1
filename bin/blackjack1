@@ -25,6 +25,10 @@ unless player.blackjack?
 		puts "You finished with #{player.value}."
 	else
 		puts "You busted @ #{player.value}."
+		sleep(1)
+		puts "Dealer wins"
+		sleep(2)
+		exit
 	end
 	sleep 2
 	if dealer.blackjack?
