@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 require "blackjack1"
-Hand.deck, :inputerror = CardDeck::Deck.new, "Invalid input. Please input '(h)it' or '(s)tay'"
+Hand.deck, inputerror = CardDeck::Deck.new, "Invalid input. Please input '(h)it' or '(s)tay'"
 dealer, player, view = Hand.new, Hand.new, proc do |player|
 	puts "You have: #{player.view}"
 	sleep(0.5)
@@ -13,11 +13,11 @@ unless player.blackjack?
 	sleep 1
 	loop do
 		puts
-		catch :inputerror do
+		catch inputerror do
 			print "(h)it or (s)tay? "
 			action = gets.chomp.downcase
 			if action.include?("s") then break
-			elsif !action.include?("h") then throw :inputerror
+			elsif !action.include?("h") then throw inputerror
 			end
 		end
 		sleep(1)
