@@ -6,6 +6,7 @@ dealer, player, view = Hand.new, Hand.new, proc do |player|
 	sleep(0.5)
 	puts "Value: #{player.value}"
 	sleep 1
+	return nil
 end
 view.call player
 unless player.blackjack?
@@ -23,32 +24,32 @@ unless player.blackjack?
 	unless player.bust?
 		puts "You finished with #{player.value}."
 	else
-		puts "You busted."
+		puts "You busted @ #{player.value}."
 	end
 	sleep 2
 	if dealer.blackjack?
 		puts "Dealer got blackjack."
-		sleep 0.5
+		puts; sleep 0.5
 		puts "Dealer wins."
 		sleep 2
 		exit
 	end
 	puts
 	while dealer.value <= Hand::MDHV
-		puts "The dealer hit!"
+		puts "The dealer hits!"
 		dealer.hit
 		sleep 0.5
 	end
 	puts
-	if dealer.bust? then puts "The dealer busted!"
+	if dealer.bust? then puts "The dealer busted @ #{dealer.value}!"
 	else
-		puts "The dealer stays at #{dealer.value}"
+		puts "The dealer stays @ #{dealer.value}"
 	end
 	sleep 2
 	puts compare_score player, dealer
 else
 	puts "You got blackjack!"
-	sleep 1
+	puts; sleep 1
 	puts "You win!"
 	sleep 0.5
 end
