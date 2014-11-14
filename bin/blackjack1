@@ -1,4 +1,21 @@
 #!/usr/bin/env ruby
+BEGIN {
+	helpmessage = <<HELP
+\u00B7Goals:
+\u00B7Beat the dealer by having your value be greater than his, without going over 21 and busting.
+\u00B7Get blackjack by having your starting hand have a value of 21.
+\u00B7Values:
+\u00B7Ace => 1 or 11
+\u00B7Number => itself
+\u00B7King, Queen, Jack => 10
+HELP
+	if ARGV[0].class == String
+		if ARGV[0].include? "-h"
+			puts helpmessage
+			exit
+		end
+	end
+}
 require "blackjack1"
 Hand.deck, inputerror = CardDeck::Deck.new, "Invalid input. Please input '(h)it' or '(s)tay'"
 dealer, player, view = Hand.new, Hand.new, proc do |player|
