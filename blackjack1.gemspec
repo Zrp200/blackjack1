@@ -1,6 +1,6 @@
 Gem::Specification.new do |gem|
 	gem.name = "blackjack1"
-	gem.version = "0.0.1"
+	gem.version = ENV['TRAVIS_TAG'] if ENV['TRAVIS']
 	gem.email = "zrp200@gmail.com"
 	gem.author = "Zachary Perlmutter"
 	gem.files = %w(lib/card.rb lib/hand.rb lib/blackjack1.rb)
