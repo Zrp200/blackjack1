@@ -13,18 +13,11 @@ unless player.blackjack?
 	sleep 1
 	loop do
 		puts
-		catch inputerror do
-			print "(h)it or (s)tay? "
-			action = gets.chomp.downcase
-			if action.include?("s") then break
-			elsif !action.include?("h") then throw inputerror
-			end
-		end
-		sleep(1)
-		player.hit
 		print view.call player
-		sleep(1.5)
-		break if player.value == 21
+		print "(h)it or (s)tay? "
+		action = gets.chomp.downcase
+		player.hit if action.include?("h")
+		break if action.include?("s") || player.value >= 21
 	end
 	puts ""
 	unless player.bust?
