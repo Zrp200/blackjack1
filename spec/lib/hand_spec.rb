@@ -9,7 +9,7 @@ RSpec.describe Hand do
   describe ".deck" do
     subject {Hand.deck}
     it {is_expected.to be_an_instance_of Array}
-    its(:sample) {is_expected.to be_an_instance of CardDeck::Card}
+    its(:sample) {is_expected.to be_an_instance_of CardDeck::Card}
   end
   describe "#new" do
     context "when @cards == [#{CardDeck.Card 'Jack', 'diamonds'}, #{CardDeck.Card 'Ace', 'spades'}]" do
