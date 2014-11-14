@@ -7,7 +7,6 @@ dealer, player, view = Hand.new, Hand.new, proc do |player|
 	puts "Value: #{player.value}"
 	sleep(1)
 end
-view.call player
 unless player.blackjack?
 	puts "The dealer is showing #{dealer.cards[1].abbr}\n"
 	sleep 1
