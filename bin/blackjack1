@@ -9,7 +9,9 @@ BEGIN {
 	\u00B7Number => itself
 	\u00B7King, Queen, Jack => 10 
 HELP
-	puts helpmessage if ARGV[0].include? "-h"
+	if ARGV[0].class = String
+		puts helpmessage if ARGV[0].include? "-h"
+	end
 }
 require "blackjack1"
 Hand.deck, inputerror = CardDeck::Deck.new, "Invalid input. Please input '(h)it' or '(s)tay'"
