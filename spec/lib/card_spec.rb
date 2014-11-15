@@ -8,7 +8,7 @@ RSpec.describe Card do
       it {is_expected.to eq s.num}
     end
     for num in ["Jack", "Queen", "King"]
-      context "when num == #{num}" do
+      context "when num" do
         subject {Card.new(num).value}
         it {is_expected.to eq 10}
       end
