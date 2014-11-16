@@ -86,6 +86,6 @@ END {
 	puts; puts
 	unless ARGV[0].class == String
 		print "Would you like to play again? (y/n) "
-		`blackjack1` if gets.chomp.downcase.include? "y"
+		puts `blackjack1` if gets.chomp.downcase.include? "y"
 	end
 }
