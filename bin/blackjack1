@@ -2,21 +2,12 @@
 BEGIN {
 	helpmessage = <<HELP
 \u00B7Goals:
-<<<<<<< HEAD
 	\u00B7Beat the dealer by having your value be greater than his, without going over 21 and busting.
 	\u00B7Get blackjack by having your starting hand have a value of 21.
 \u00B7Values:
 	\u00B7Ace => 1 or 11
 	\u00B7Number => itself
 	\u00B7King, Queen, Jack => 10 
-=======
-\u00B7Beat the dealer by having your value be greater than his, without going over 21 and busting.
-\u00B7Get blackjack by having your starting hand have a value of 21.
-\u00B7Values:
-\u00B7Ace => 1 or 11
-\u00B7Number => itself
-\u00B7King, Queen, Jack => 10
->>>>>>> origin/master
 HELP
 	if ARGV[0].class == String
 		if ARGV[0].include? "-h"
