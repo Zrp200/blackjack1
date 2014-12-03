@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    blackjack1 (3.0.0)
+    blackjack1 (0.9035340144669057)
       card_deck (~> 3.0)
 
 GEM
@@ -13,6 +13,7 @@ GEM
     diff-lcs (1.2.5)
     docile (1.1.5)
     multi_json (1.10.1)
+    rake (10.3.2)
     rspec (3.1.0)
       rspec-core (~> 3.1.0)
       rspec-expectations (~> 3.1.0)
@@ -40,5 +41,6 @@ PLATFORMS
 DEPENDENCIES
   blackjack1!
   codeclimate-test-reporter
+  rake
   rspec (~> 3.1)
   rspec-its
