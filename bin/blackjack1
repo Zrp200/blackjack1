@@ -19,56 +19,63 @@ HELP
 require "blackjack1"
 Hand.deck, inputerror = CardDeck::Deck.new, "Invalid input. Please input '(h)it' or '(s)tay'"
 dealer, player, view = Hand.new, Hand.new, proc do |player|
-	puts "You have: #{player.view}"
+	puts "\tYou have: #{player.view}"
 	sleep(0.5)
-	puts "Value: #{player.value}"
+	puts "\tValue: #{player.value}"
 	sleep(1)
 end
+puts
 unless player.blackjack?
-	puts "The dealer is showing #{dealer.cards[1].abbr}\n"
+	puts "\tThe dealer is showing #{dealer.cards[1].abbr}\n"
 	sleep 1
 	loop do
 		puts
 		view.call player
-		print "(h)it or (s)tay? "
+		if player.length == 2 then print "\t(d)ouble, (h)it, or (s)tay? "
+		else; print "\t(h)it or (s)tay? "
+		end
 		action = gets.chomp.downcase
 		player.hit if action.include?("h")
 		break if action.include?("s") || player.value >= 21
+		if action.include?("d") and player.length == 21
+			player.hit
+			break
+		end
 	end
 	puts ""
 	unless player.bust?
-		puts "You finished with #{player.value}."
+		puts "\tYou finished with #{player.value}."
 	else
-		puts "You busted @ #{player.value}."
+		puts "\tYou busted @ #{player.value}."
 		sleep(1)
-		puts "Dealer wins"
+		puts "\tDealer wins"
 		sleep(2)
 		exit
 	end
 	sleep 2
 	if dealer.blackjack?
-		puts "Dealer got blackjack."
+		puts "\tDealer got blackjack."
 		puts; sleep 0.5
-		puts "Dealer wins."
+		puts "\tDealer wins."
 		sleep 2
 		exit
 	end
 	puts
 	while dealer.value <= Hand::MDHV
-		puts "The dealer hits!"
+		puts "\tThe dealer hits!"
 		dealer.hit
 		sleep 0.5
 	end
 	puts
-	if dealer.bust? then puts "The dealer busted @ #{dealer.value}!"
+	if dealer.bust? then puts "\tThe dealer busted @ #{dealer.value}!"
 	else
 		puts "The dealer stays @ #{dealer.value}"
 	end
 	sleep 2
 	puts compare_score player, dealer
 else
-	puts "You got blackjack!"
+	puts "\tYou got blackjack!"
 	puts; sleep 1
-	puts "You win!"
+	puts "\tYou win!"
 	sleep 0.5
 end

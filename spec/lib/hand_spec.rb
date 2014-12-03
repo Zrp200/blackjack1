@@ -24,8 +24,8 @@ RSpec.describe Hand do
       its(:length) {is_expected.to eq 3}
     end
     describe "value" do
-      context "when @cards == [#{CardDeck.Card 'Ace', 'spades'}, #{CardDeck.Card 10, 'spades'}, #{CardDeck.Card 10, 'diamonds'}]" do
-        hand = Hand.new [CardDeck.Card('Ace', 'spades'), CardDeck.Card(10, 'spades'), CardDeck.Card(10, 'diamonds')]
+      context "when @cards == [#{CardDeck.Card 'Ace'}, #{CardDeck.Card 10}, #{CardDeck.Card 10}]" do
+        hand = Hand.new [CardDeck.Card('Ace'), CardDeck.Card(10), CardDeck.Card(10)]
         subject {hand.value}
         it {is_expected.to eq 21}
       end
