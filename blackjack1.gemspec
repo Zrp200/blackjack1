@@ -1,5 +1,6 @@
 Gem::Specification.new do |gem|
 	gem.name = "blackjack1"
+	gem.version = rand unless ENV['TRAVIS']
 	gem.version = ENV['TRAVIS_TAG'] if ENV['TRAVIS']
 	gem.version = ENV['TRAVIS_BUILD_ID'] if ENV['TRAVIS'] and ENV['TRAVIS_TAG'] == ""
 	gem.email = "zrp200@gmail.com"
@@ -13,6 +14,7 @@ Gem::Specification.new do |gem|
 	gem.add_runtime_dependency "card_deck", "~> 3.0"
 	gem.add_development_dependency "rspec", "~> 3.1"
 	gem.add_development_dependency "rspec-its"
+	gem.add_development_dependency "rake"
 	gem.requirements << "Command Prompt"
 	gem.bindir = "bin"
 end
