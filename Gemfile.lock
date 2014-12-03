@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     blackjack1 (0.0.0)
-      card_deck (~> 1.2)
+      card_deck (~> 3.0)
 
 GEM
   remote: https://rubygems.org/
