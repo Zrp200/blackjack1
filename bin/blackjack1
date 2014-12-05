@@ -31,7 +31,7 @@ unless player.blackjack?
 	loop do
 		puts
 		view.call player
-		if player.length == 2 then print "\t(d)ouble, (h)it, or (s)tay? "
+		if player.cards.length == 2 then print "\t(d)ouble, (h)it, or (s)tay? "
 		else; print "\t(h)it or (s)tay? "
 		end
 		action = gets.chomp.downcase
