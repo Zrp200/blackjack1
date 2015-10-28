@@ -1,4 +1,4 @@
-# blackjack
+# blackjack1
 The commonly played card game in casinos and for fun. Have fun!
 ## Badges
 [![Gem Version](https://badge.fury.io/rb/blackjack1.svg)](http://badge.fury.io/rb/blackjack1)
